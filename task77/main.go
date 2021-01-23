@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/AndreyRomanchev/sf-go/task77/calc"
 )
 
 var firstNum float64
@@ -24,16 +25,11 @@ func main() {
 		fmt.Println("Cannot read second number:", err)
 	}
 
-	switch operation {
-	case "+":
-		fmt.Println(firstNum + secondNum)
-	case "-":
-		fmt.Println(firstNum - secondNum)
-	case "*":
-		fmt.Println(firstNum * secondNum)
-	case "/":
-		fmt.Println(firstNum / secondNum)
-	default:
-		fmt.Println("Unknown operation:", operation)
+	c := calc.NewCalculator(firstNum, secondNum)
+	res, err := c.Calculate(operation)
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println(res)
 	}
 }
