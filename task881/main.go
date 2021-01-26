@@ -9,11 +9,11 @@ func printCharacteristics(p electronic.Phone) {
 	fmt.Println("Brand:", p.Brand())
 	fmt.Println("Model", p.Model())
 	fmt.Println("Type:", p.Type())
-	switch p.(type) {
+	switch p := p.(type) {
 	case electronic.SmartPhone:
-		fmt.Println("OS:", p.(electronic.SmartPhone).OS())
+		fmt.Println("OS:", p.OS())
 	case electronic.StationPhone:
-		fmt.Println("Number of buttons:", p.(electronic.StationPhone).ButtonsCount())
+		fmt.Println("Number of buttons:", p.ButtonsCount())
 	}
 }
 
