@@ -24,7 +24,7 @@ func NewQueue() Queue {
 
 func (q Queue) Print() {
 	if q.Head == q.Tail {
-		fmt.Println(fmt.Errorf("Queue is empty"))
+		fmt.Println(fmt.Errorf("queue is empty"))
 	} else {
 		node := q.Head
 		for node != nil {
@@ -49,7 +49,7 @@ func (q *Queue) Queue(el int) {
 func (q *Queue) Dequeue() (int, error) {
 	size := q.Size
 	if size == 0 {
-		return 0, fmt.Errorf("Queue is emtpy")
+		return 0, fmt.Errorf("queue is emtpy")
 	}
 	el := q.Head.Value
 	q.Head = q.Head.Next
