@@ -26,10 +26,8 @@ func (q Queue) Print() {
 	if q.Head == q.Tail {
 		fmt.Println(fmt.Errorf("queue is empty"))
 	} else {
-		node := q.Head
-		for node != nil {
+		for node := q.Head; node != nil; node = node.Next {
 			fmt.Printf("%v ", node.Value)
-			node = node.Next
 		}
 		fmt.Println()
 	}
